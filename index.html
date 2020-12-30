@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>大事件后台</title>   
+    <link rel="stylesheet" href="assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="assets/lib/jquery.js"></script>
+    <script src="assets/js/baseAPI.js"></script>
+    <script src="assets/js/index.js"></script>
+
 </head>
-<body>
-    
+
+
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">
+                <img src="assets/images/logo.png" alt="">
+            </div>
+            <!-- 头部区域 -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="userinfo">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span class="text-avatar"></span>
+                        个人中心
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">更换头像</a></dd>
+                        <dd><a href="">重置密码</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" id="btnLogout"><i class="layui-icon layui-icon-close-fill"></i>退出账号</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域 -->
+                <div class="userinfo">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    <span class="text-avatar"></span>
+                    <span id="welcome">欢迎***</span>
+                </div>
+                <ul class="layui-nav layui-nav-tree" lay-shrink="all">
+                    
+                    <li class="layui-nav-item layui-this">
+                        <a href="home/dashboard.html" target="fm">
+                            <i class="layui-icon layui-icon-home"></i>首页
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;"><i class="layui-icon layui-icon-read"></i>文章管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-note"></i>文章类别</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-template"></i>文章列表</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-edit"></i>发布文章</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;"><i class="layui-icon layui-icon-username"></i>个人中心</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-face-smile"></i>更换头像</a></dd>
+                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-password"></i>重置密码</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+           <iframe src="/home/dashboard.html" name="fm" frameborder="0"></iframe>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            © jiangjun.com - 一般路过苍蓝星
+        </div>
+    </div>
+    <!-- layui js框架-->
+    <script src="assets/lib/layui/layui.all.js"></script>
 </body>
+
+
 </html>
