@@ -10,7 +10,7 @@ $(function () {
     });
     //从layui获取form对象
     var form = layui.form;
-    var layer=layui.layer;
+    var layer = layui.layer;
     //通过form.verify函数自定义校验规则
     form.verify({
         username: function (value, item) { //value：表单的值、item：表单的DOM对象
@@ -39,30 +39,33 @@ $(function () {
     });
 
     //监听注册表单提交事件
-    $('#form_reg').on('submit',function(e){
+    $('#form_reg').on('submit', function (e) {
         e.preventDefault();
-        var data={username:$('#form_reg [name=username]').val(),password:$('#form_reg [name=password]').val()};
-        $.post('/api/reguser',data,function(res){
-            if(res.status!==0){
-               return layer.msg(res.message);
+        var data = {
+            username: $('#form_reg [name=username]').val(),
+            password: $('#form_reg [name=password]').val()
+        };
+        $.post('/api/reguser', data, function (res) {
+            if (res.status !== 0) {
+                return layer.msg(res.message);
             }
             layer.msg('注册成功');
-            setTimeout(function(){$('#link_login').click()},3000)            
+            setTimeout(function () { $('#link_login').click() }, 3000)
         })
     })
     //监听登陆表单登陆事件
-    $('#form_login').on('submit',function(e){
+    $('#form_login').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
-            url:'/api/login',
-            method:'POST',
+            url: '/api/login',
+            method: 'POST',
             data: $(this).serialize(),
-            success:function(res){
-                if(res.status !== 0){
+            success: function (res) {
+                if (res.status !== 0) {
                     return layer.msg(res.message);
                 }
                 layer.msg('登陆成功');
-                localStorage.setItem('token',res.token)
+                localStorage.setItem('token', res.token)
                 location.href = '/index.html'
             }
         })
